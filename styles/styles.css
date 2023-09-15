@@ -11,16 +11,20 @@ body {
   }
   
   #game-container {
-    display: flex;
+    display: none;
     width: 100vw;
     padding: 20px 0px;
     justify-content: center;
+    background-image: url(../images/Argentina-flag.png);
+    background-size: cover;
+    background-position: center center;
+
   }
   
   #game-screen {
     display: none;
     align-content: center;
-    padding: 20px 0px;
+    padding: 20px 35px;
     overflow: hidden;
     position: relative;
     background-image: url(../images/Field.jpg);
@@ -32,22 +36,31 @@ body {
     display: none;
   }
   
-  .game-intro p {
-    font-size: 18px;
+  #game-intro p {
+    font-size: 20px;
     font-family: "Verdana";
+    color: white;
+  }
+
+  .instructions {
+    border: 3px dotted white;
+    border-radius: 10px;
+    margin: 0px 400px;    
   }
   
   .logo-img {
-    width: 350px;
+    width: 300px;
+    margin: 50px;
   }
   
   .arrows-img {
-    width: 150px;
+    width: 200px;
+    margin: 20px;
   }
   
   body button {
     font-size: 30px;
-    background-color: #870007;
+    background-color: #12318c;
     color: #fff;
     padding: 20px 40px;
     border: 0;
