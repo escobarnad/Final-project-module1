@@ -10,5 +10,37 @@ window.addEventListener('load', () => {
     startButton.addEventListener('click', function () {
         startGame()
       })
+
+    document.addEventListener('keydown', event => {
+        if (event.code === 'KeyA'){
+            game.messi.directionX = -2
+        }
+        else if (event.code === 'KeyD'){
+            game.messi.directionX = 2
+        }  
+        
+        if (event.code === 'KeyW'){
+            game.messi.directionY = -2
+        }
+        else if (event.code === 'KeyS'){
+            game.messi.directionY = 2
+        }  
+    })
+
+    document.addEventListener('keyup', event => {
+        if (event.code === 'KeyA'){
+            game.messi.directionX = 0
+        }
+        else if (event.code === 'KeyD'){
+            game.messi.directionX = 0
+        }
+
+        if (event.code === 'KeyW'){
+            game.messi.directionY = 0
+        }
+        else if (event.code === 'KeyS'){
+            game.messi.directionY = 0
+        }
+    })
     
 })

@@ -5,9 +5,11 @@ class Messi {
         this.top = top
         this.height = height
         this.width = width
-        this.player = document.createElement("img")
+        this.directionX = 0
+        this.directionY = 0
+        this.player = document.createElement('img')
 
-        this.player.src = "../images/Messi.png"
+        this.player.src = '../images/Messi.png'
         this.player.style.position = "absolute"
 
         this.player.style.left = `${this.left}px`
@@ -16,6 +18,35 @@ class Messi {
         this.player.style.widows = `${this.width}px`
 
         this.gameScreen.appendChild(this.player)
+    }
+
+    move () {
+        this.updatePosition()
+        this.player.style.left = `${this.left}px`
+        this.player.style.top = `${this.top}px`
+
+    }
+
+    updatePosition (){
+        if (this.left < 58){
+            this.left = 58
+        } 
+        else if (this.left > this.gameScreen.clientWidth - 60 - this.width){
+            this.left = this.gameScreen.clientWidth - 60 - this.width
+        }
+        else {
+            this.left += this.directionX
+        }
+
+        if (this.top < 15){
+            this.top = 15
+        } 
+        else if (this.top > this.gameScreen.clientHeight - 18 - this.height){
+            this.top = this.gameScreen.clientHeight - 18 - this.height
+        }
+        else {
+            this.top += this.directionY
+        }
     }
 
 }

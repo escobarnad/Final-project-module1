@@ -14,11 +14,20 @@ body {
     display: none;
     width: 100vw;
     padding: 20px 0px;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     background-image: url(../images/Argentina-flag.png);
     background-size: cover;
     background-position: center center;
 
+  }
+
+  .score {
+    font-size: 18px;
+    font-family: 'Lucida Sans';
+    color: #5d9afc;
+    border: 2px dotted #5d9afc;
+    padding: 10px 30px;
   }
   
   #game-screen {
@@ -38,7 +47,7 @@ body {
   
   #game-intro p {
     font-size: 20px;
-    font-family: "Verdana";
+    font-family: 'Lucida Sans';
     color: white;
   }
 
