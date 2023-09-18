@@ -6,11 +6,11 @@ class Game {
       this.gameEndScreen = document.getElementById('game-end')
       this.height = 600
       this.width = 920
-      this.messi = new Messi(this.gameScreen, 70, 265, 100, 50)
+      this.messi = new Messi(this.gameScreen, 80, 285, 80, 40)
       this.defenders = []
       this.score = 0
-    //   this.lives = 3
-    //   this.gameOver = false
+      this.lives = 3
+      this.gameOver = false
     // this.example = 0
       //   this.animateId = 0
     }
@@ -33,13 +33,31 @@ class Game {
         this.update()
         // console.log(this.example)
         if (this.defenders.length < 6) {
-            this.defenders.push(new Defenders(this.gameScreen, (Math.random() * (this.gameScreen.clientWidth -140 -50 -80) +120), 
+            this.defenders.push(new Defenders(this.gameScreen, (Math.random() * (this.gameScreen.clientWidth -140 -50 -80) +150), 
             (Math.random() * (this.gameScreen.clientHeight -60 -100) +30), 
             100, 
             50))
         }
         document.getElementById('score').innerText = this.score
-        requestAnimationFrame(() => this.gameLoop())
+        document.getElementById('lives').innerText = this.lives
+
+        // Game over
+
+        if (this.lives < 1 || this.score >= 5){
+          this.gameOver = true
+        }
+        
+        if (this.gameOver) {
+          this.startScreen.style.display = 'none'
+          this.gameContainer.style.display = 'none'
+          this.gameScreen.style.display = 'none'
+          this.gameEndScreen.style.display = 'block'
+        }
+        else {
+          
+          requestAnimationFrame(() => this.gameLoop())
+        }
+
 
        
       }
@@ -47,24 +65,54 @@ class Game {
       update(){
         // this.example += 1
         this.messi.move()
+
+
+
+
         this.defenders.forEach(defenders => {
-            if (defenders.top > 400){
-                defenders.moveUp()          
+         
+          // Messi colliding with the defenders 
+          
+          defenders.updatePosition() 
+          if (this.messi.didCollide(defenders)) {
+            this.lives -= 1
+            defenders.player.remove()
+            this.defenders.push(new Defenders(this.gameScreen, (Math.random() * (this.gameScreen.clientWidth -140 -50 -80) +150), 
+            (Math.random() * (this.gameScreen.clientHeight -60 -100) +30), 
+            100, 
+            50))
+          }
+
+
+
+          // Bounce defenders
+
+             if (defenders.top > this.gameScreen.clientHeight - 30 - defenders.height){
+
+                 defenders.direction = -1
+                                      
             }
-            else if (defenders.top < 400) {
-                defenders.moveDown()
+            else if (defenders.top < 30) {
+            defenders.direction = 1
+
             }
+
             
         })
+
+
+        // Messi scores a goal
         if (this.messi.left > this.gameScreen.clientWidth - 70 - this.messi.width){
             if (this.messi.top > 200 && this.messi.top < 380 - this.messi.height){
                 this.score += 1
-                this.messi.left = 70
-                this.messi.top = 265
+                this.messi.left = 80
+                this.messi.top = 285
             }
         }
+
+        
 
       }
     }
 
-    // this.gameScreen.clientHeight - 30 - defenders.height
+   

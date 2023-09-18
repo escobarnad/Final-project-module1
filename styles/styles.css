@@ -43,10 +43,25 @@ body {
    
   #game-end {
     display: none;
+    background-image: url(../images/End-screen.jpg);
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
   }
+
+  #game-end h1{
+    color: white;
+    font-family: 'Lucida Sans';
+  }
+
+  /* #game-end img{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  } */
   
   #game-intro p {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Lucida Sans';
     color: white;
   }
@@ -54,22 +69,33 @@ body {
   .instructions {
     border: 3px dotted white;
     border-radius: 10px;
-    margin: 0px 400px;    
+    margin: 0px 500px;    
   }
   
   .logo-img {
-    width: 300px;
-    margin: 50px;
-  }
-  
-  .arrows-img {
-    width: 200px;
+    width: 250px;
     margin: 20px;
   }
   
-  body button {
-    font-size: 30px;
+  .arrows-img {
+    width: 150px;
+    margin-top: 20px;
+  }
+  
+  #start-button {
+    font-size: 25px;
     background-color: #12318c;
+    color: #fff;
+    padding: 15px 30px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  #restart-button {
+    font-size: 30px;
+    background-color: #38a17a;
     color: #fff;
     padding: 20px 40px;
     border: 0;

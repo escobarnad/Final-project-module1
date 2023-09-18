@@ -11,6 +11,15 @@ window.addEventListener('load', () => {
         startGame()
       })
 
+      restartButton.addEventListener('click', function () {
+        game.gameEndScreen.style.display = "none"
+        game.startScreen.style.display = "block"
+        game.gameContainer.style.display = 'none'
+        game.gameScreen.style.display = 'none'
+        location.reload()
+
+      }) 
+
     document.addEventListener('keydown', event => {
         if (event.code === 'KeyA'){
             game.messi.directionX = -2

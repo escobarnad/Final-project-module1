@@ -18,22 +18,8 @@ class Defenders {
         this.gameScreen.appendChild(this.player)
     }
 
-    moveDown () {
-        this.updatePositionDown()
-        this.player.style.top = `${this.top}px`
-
-    }
-
-    moveUp () {
-        this.updatePositionUp()
-        this.player.style.top = `${this.top}px`
-    }
-
-    updatePositionDown () {
+    updatePosition (){
         this.top += this.direction
-    }
-
-    updatePositionUp (){
-        this.top -= this.direction
+        this.player.style.top = `${this.top}px`
     }
 }
