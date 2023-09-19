@@ -52,14 +52,10 @@ body {
   #game-end h1{
     color: white;
     font-family: 'Lucida Sans';
+    font-size: 40px;
   }
 
-  /* #game-end img{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  } */
-  
+   
   #game-intro p {
     font-size: 16px;
     font-family: 'Lucida Sans';
@@ -109,8 +105,8 @@ body {
     display: none;
     border: 3px dotted white;
     border-radius: 10px;
-    margin: 0px 600px;
-    font-size: 16px;
+    margin: 0px 500px;
+    font-size: 17px;
     font-family: 'Lucida Sans';
     color: white;  
     padding: 40px;
@@ -121,10 +117,15 @@ body {
     display: none;
     border: 3px dotted white;
     border-radius: 10px;
-    margin: 0px 600px; 
-    font-size: 16px;
+    margin: 0px 500px; 
+    font-size: 17px;
     font-family: 'Lucida Sans';
     color: white; 
     padding: 40px;
     background-color: #38a17a;
+  }
+
+  #game-end img{
+    width: 200px;
+    margin: 10px;
   }
