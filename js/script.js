@@ -1,6 +1,8 @@
 window.addEventListener('load', () => {
+    
     const startButton = document.getElementById('start-button')
     const restartButton = document.getElementById('restart-button')
+
     let game
   
     function startGame() {
@@ -9,14 +11,12 @@ window.addEventListener('load', () => {
     }
     startButton.addEventListener('click', function () {
         startGame()
+        
       })
 
       restartButton.addEventListener('click', function () {
-        game.gameEndScreen.style.display = "none"
-        game.startScreen.style.display = "block"
-        game.gameContainer.style.display = 'none'
-        game.gameScreen.style.display = 'none'
         location.reload()
+
 
       }) 
 

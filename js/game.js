@@ -14,6 +14,7 @@ class Game {
       this.gameOverWin = false
       this.winScreen = document.getElementById('game-over-win')
       this.loseScreen = document.getElementById('game-over-lose')
+      this.audioCrowd = document.getElementById("crowd")
     // this.example = 0
       //   this.animateId = 0
     }
@@ -28,6 +29,7 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`
         this.gameScreen.style.width = `${this.width}px` 
 
+        this.audioCrowd.play()
         
         this.gameLoop()
       }
@@ -48,10 +50,12 @@ class Game {
 
         if (this.lives < 1){
           this.gameOverLose = true
+          this.audioCrowd.pause()
           
         }
         else if (this.score >= 1){
           this.gameOverWin = true
+          this.audioCrowd.pause()
 
         }
         
@@ -82,10 +86,8 @@ class Game {
 
       update(){
         // this.example += 1
+               
         this.messi.move()
-
-
-
 
         this.defenders.forEach(defenders => {
          
