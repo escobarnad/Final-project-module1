@@ -10,7 +10,10 @@ class Game {
       this.defenders = []
       this.score = 0
       this.lives = 3
-      this.gameOver = false
+      this.gameOverLose = false
+      this.gameOverWin = false
+      this.winScreen = document.getElementById('game-over-win')
+      this.loseScreen = document.getElementById('game-over-lose')
     // this.example = 0
       //   this.animateId = 0
     }
@@ -43,15 +46,30 @@ class Game {
 
         // Game over
 
-        if (this.lives < 1 || this.score >= 5){
-          this.gameOver = true
+        if (this.lives < 1){
+          this.gameOverLose = true
+          
+        }
+        else if (this.score >= 1){
+          this.gameOverWin = true
+
         }
         
-        if (this.gameOver) {
+        if (this.gameOverLose) {
           this.startScreen.style.display = 'none'
           this.gameContainer.style.display = 'none'
           this.gameScreen.style.display = 'none'
           this.gameEndScreen.style.display = 'block'
+          this.winScreen.style.display = 'none'
+          this.loseScreen.style.display = 'block'
+        }
+        else if (this.gameOverWin){
+          this.startScreen.style.display = 'none'
+          this.gameContainer.style.display = 'none'
+          this.gameScreen.style.display = 'none'
+          this.gameEndScreen.style.display = 'block'
+          this.winScreen.style.display = 'block'
+          this.loseScreen.style.display = 'none'
         }
         else {
           

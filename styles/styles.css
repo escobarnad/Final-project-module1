@@ -101,5 +101,30 @@ body {
     border: 0;
     box-shadow: 0;
     border-radius: 5px;
+    margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  #game-over-win {
+    display: none;
+    border: 3px dotted white;
+    border-radius: 10px;
+    margin: 0px 600px;
+    font-size: 16px;
+    font-family: 'Lucida Sans';
+    color: white;  
+    padding: 40px;
+    background-color: #38a17a;
+  }
+
+  #game-over-lose {
+    display: none;
+    border: 3px dotted white;
+    border-radius: 10px;
+    margin: 0px 600px; 
+    font-size: 16px;
+    font-family: 'Lucida Sans';
+    color: white; 
+    padding: 40px;
+    background-color: #38a17a;
   }
