@@ -7,7 +7,7 @@ class Defenders {
         this.width = width
         this.player = document.createElement('img')
         this.direction = 1
-        this.player.src = '../images/Defender.png'
+        this.player.src = './images/Defender.png'
         this.player.style.position = "absolute"
 
         this.player.style.left = `${this.left}px`

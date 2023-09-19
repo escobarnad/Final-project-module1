@@ -9,7 +9,7 @@ class Messi {
         this.directionY = 0
         this.player = document.createElement('img')
 
-        this.player.src = '../images/Messi.png'
+        this.player.src = './images/Messi.png'
         this.player.style.position = "absolute"
 
         this.player.style.left = `${this.left}px`
