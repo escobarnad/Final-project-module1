@@ -28,11 +28,11 @@ class Messi {
     }
 
     updatePosition (){
-        if (this.left < 58){
-            this.left = 58
+        if (this.left < 70){
+            this.left = 70
         } 
-        else if (this.left > this.gameScreen.clientWidth - 60 - this.width){
-            this.left = this.gameScreen.clientWidth - 60 - this.width
+        else if (this.left > this.gameScreen.clientWidth - 70 - this.width){
+            this.left = this.gameScreen.clientWidth - 70 - this.width
         }
         else {
             this.left += this.directionX

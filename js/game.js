@@ -15,8 +15,7 @@ class Game {
       this.winScreen = document.getElementById('game-over-win')
       this.loseScreen = document.getElementById('game-over-lose')
       this.audioCrowd = document.getElementById("crowd")
-    // this.example = 0
-      //   this.animateId = 0
+
     }
 
     start() {
@@ -30,13 +29,14 @@ class Game {
         this.gameScreen.style.width = `${this.width}px` 
 
         this.audioCrowd.play()
+        this.audioCrowd.volume = 0.2
         
         this.gameLoop()
       }
 
       gameLoop(){
         this.update()
-        // console.log(this.example)
+
         if (this.defenders.length < 6) {
             this.defenders.push(new Defenders(this.gameScreen, (Math.random() * (this.gameScreen.clientWidth -140 -50 -80) +150), 
             (Math.random() * (this.gameScreen.clientHeight -60 -100) +30), 
@@ -53,7 +53,7 @@ class Game {
           this.audioCrowd.pause()
           
         }
-        else if (this.score >= 1){
+        else if (this.score >= 5){
           this.gameOverWin = true
           this.audioCrowd.pause()
 
@@ -85,7 +85,7 @@ class Game {
       }
 
       update(){
-        // this.example += 1
+
                
         this.messi.move()
 
