@@ -53,7 +53,7 @@ class Game {
           this.audioCrowd.pause()
           
         }
-        else if (this.score >= 5){
+        else if (this.score >= 1){
           this.gameOverWin = true
           this.audioCrowd.pause()
 
@@ -94,10 +94,11 @@ class Game {
           // Messi colliding with the defenders 
           
           defenders.updatePosition() 
+          
           if (this.messi.didCollide(defenders)) {
             this.lives -= 1
             defenders.player.remove()
-            this.defenders.push(new Defenders(this.gameScreen, (Math.random() * (this.gameScreen.clientWidth -140 -50 -80) +150), 
+            this.defenders.push(new Defenders(this.gameScreen, (Math.random() * (this.gameScreen.clientWidth -140 -100 -180) +300), 
             (Math.random() * (this.gameScreen.clientHeight -60 -100) +30), 
             100, 
             50))

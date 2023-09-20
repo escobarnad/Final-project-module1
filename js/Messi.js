@@ -38,11 +38,11 @@ class Messi {
             this.left += this.directionX
         }
 
-        if (this.top < 15){
-            this.top = 15
+        if (this.top < 25){
+            this.top = 25
         } 
-        else if (this.top > this.gameScreen.clientHeight - 18 - this.height){
-            this.top = this.gameScreen.clientHeight - 18 - this.height
+        else if (this.top > this.gameScreen.clientHeight - 25 - this.height){
+            this.top = this.gameScreen.clientHeight - 25 - this.height
         }
         else {
             this.top += this.directionY
