@@ -53,7 +53,7 @@ class Game {
           this.audioCrowd.pause()
           
         }
-        else if (this.score >= 1){
+        else if (this.score >= 5){
           this.gameOverWin = true
           this.audioCrowd.pause()
 
@@ -94,7 +94,7 @@ class Game {
           // Messi colliding with the defenders 
           
           defenders.updatePosition() 
-          
+
           if (this.messi.didCollide(defenders)) {
             this.lives -= 1
             defenders.player.remove()
